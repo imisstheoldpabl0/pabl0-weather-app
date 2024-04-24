@@ -1,0 +1,10 @@
+App --> App.jsx
+    Header --> Header.jsx
+        Nav
+    Main --> MainComponent.jsx <main>
+        FormSearch --> FormSearch.jsx <section> // formulario con submit que guarda el valor y lo devuelve a MainComponent
+        WeatherList --> WeatherList.jsx <section> // hace fetch a la API con la librería de axios y pasa la información a WeatherCard para que pinte
+            WeatherCard --> WeatherCard.jsx <article>
+            WeatherCard --> WeatherCard.jsx <article>
+            WeatherCard --> WeatherCard.jsx <article>
+            WeatherCard --> WeatherCard.jsx <article>
