@@ -7,40 +7,50 @@
     border-radius: 8px;
     height: 88px;
     margin: 8px;
-}
 
-.main-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-    p {
-        margin: 4px;
+    .weatherIcon {
+
+        img {
+            width: 128px;
+            height: 128px;
+        
+        }
 
     }
-}
 
-.min-max {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-    p {
-        margin: 4px;
+    .main-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
+        p {
+            margin: 4px;
+
+        }
     }
-}
 
-.conditions {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    .min-max {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
-    p {
-        margin: 4px;
+        p {
+            margin: 4px;
 
+        }
+    }
+
+    .conditions {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        p {
+            margin: 4px;
+
+        }
     }
 }

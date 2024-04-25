@@ -26,6 +26,7 @@ const WeatherList = ({ city }) => {
 
     fetchData();
   }, [city]); // cuando hay un cambio en la ciudad se vueve a ejecutar el useEffect
+  //                 <img src={`http://openweathermap.org/img/w/${card.weather[0].icon}.png`} alt="Weather icon" />
 
   return (
     <section>
@@ -38,10 +39,14 @@ const WeatherList = ({ city }) => {
           {cards.map((card, i) => (
             <article key={i} className='weatherCard'>
 
+              <div className='weatherIcon'>
+                <img src={`https://openweathermap.org/img/wn/${card.weather[0].icon}@4x.png`} alt="Weather icon" />
+              </div>
+
               <div className='main-info'>
-                <p>Datetime: <b>{new Date(card.dt * 1000).toLocaleString().slice(2,4)}</b>/<b>{new Date(card.dt * 1000).toLocaleString().slice(0,1)}</b><b>{new Date(card.dt * 1000).toLocaleString().slice(10, 15)}</b><b>{new Date(card.dt * 1000).toLocaleString().slice(19, 22)}</b>
+                <p>Datetime: <b>{new Date(card.dt * 1000).toLocaleString().slice(2, 4)}</b>/<b>{new Date(card.dt * 1000).toLocaleString().slice(0, 1)}</b><b>{new Date(card.dt * 1000).toLocaleString().slice(10, 15)}</b><b>{new Date(card.dt * 1000).toLocaleString().slice(19, 22)}</b>
                 </p>
-                <p>Temperature: <b>{card.main.temp}º</b></p>
+                <p>Temperature: <b>{Math.round(card.main.temp)}º</b></p>
               </div>
 
               <div className='conditions'>
@@ -53,6 +58,7 @@ const WeatherList = ({ city }) => {
                 <p>Min Temp: <b>{card.main.temp_min}º</b></p>
                 <p>Max Temp: <b>{card.main.temp_max}º</b></p>
               </div>
+
             </article>
           ))}
         </section>
