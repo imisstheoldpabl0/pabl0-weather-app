@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import WeatherCard from "./WeatherCard/WeatherCard";
 import axios from "axios";
+import './WeatherList.css';
 
 const WeatherList = ({ city }) => {
 
@@ -16,7 +17,7 @@ const WeatherList = ({ city }) => {
 
         // Guarda en el array de cards el resultado. Procesa los datos
         setCards(weather
-          .map(l => l.main));
+          .map(l => l));
 
       } catch (e) {
         setCards([]); // No pintes nada
@@ -33,13 +34,28 @@ const WeatherList = ({ city }) => {
       <h1>Topic</h1>
 
       {cards.length !== 0 ?
-        <ul className='weatherCards'>
+        <section className='weatherCards'>
           {cards.map((card, i) => (
-            <li key={i}>
-              <p>{card.temp}</p>
-            </li>
+            <article key={i} className='weatherCard'>
+
+              <div className='main-info'>
+                <p>Datetime: <b>{new Date(card.dt * 1000).toLocaleString().slice(2,4)}</b>/<b>{new Date(card.dt * 1000).toLocaleString().slice(0,1)}</b><b>{new Date(card.dt * 1000).toLocaleString().slice(10, 15)}</b><b>{new Date(card.dt * 1000).toLocaleString().slice(19, 22)}</b>
+                </p>
+                <p>Temperature: <b>{card.main.temp}º</b></p>
+              </div>
+
+              <div className='conditions'>
+                <p>Conditions: <b>{card.weather[0].main}</b></p>
+                <p>Wind Speed: <b>{card.wind.speed} m/s</b></p>
+              </div>
+
+              <div className='min-max'>
+                <p>Min Temp: <b>{card.main.temp_min}º</b></p>
+                <p>Max Temp: <b>{card.main.temp_max}º</b></p>
+              </div>
+            </article>
           ))}
-        </ul>
+        </section>
         : ""
       }
     </section>
