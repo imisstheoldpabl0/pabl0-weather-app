@@ -13,6 +13,7 @@ const WeatherList = ({ city }) => {
         // Petición HTTP
         const res = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?units=metric&q=${city}&appid=3a5cea6cca9761e16b10a370cf420965`);
         let weather = res.data.list;
+        console.log(res);;
         console.log(weather);
 
         // Guarda en el array de cards el resultado. Procesa los datos
