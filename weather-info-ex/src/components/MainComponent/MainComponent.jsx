@@ -3,7 +3,7 @@ import FormSearch from "./FormSearch/FormSearch";
 import WeatherList from "./WeatherList/WeatherList";
 
 function MainComponent() {
-  const [ city, setCity ] = useState('Madrid');
+  const [ city, setCity ] = useState('madrid');
 
   return (
     <main>
