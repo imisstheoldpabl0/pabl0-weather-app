@@ -45,7 +45,7 @@ const WeatherList = ({ city }) => {
 
               <div className='main-info'>
                 <h1>{Math.round(card.main.temp)}º</h1>
-                <h4><b>{new Date(card.dt * 1000).toLocaleString().slice(2, 4)}</b>/<b>{new Date(card.dt * 1000).toLocaleString().slice(0, 1)}</b><b>{new Date(card.dt * 1000).toLocaleString().slice(10, 15)}</b><b>{new Date(card.dt * 1000).toLocaleString().slice(19, 22)}</b></h4>
+                <h4>{new Date(card.dt * 1000).getDate().toLocaleString()}/{new Date(card.dt * 1000).getMonth().toLocaleString()} {new Date(card.dt * 1000).getHours().toLocaleString()}:{new Date(card.dt * 1000).getMinutes().toLocaleString()}0</h4>
 
               </div>
 
