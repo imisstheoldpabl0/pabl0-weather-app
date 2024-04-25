@@ -46,18 +46,24 @@ const WeatherList = ({ city }) => {
               <div className='main-info'>
                 <h1>{Math.round(card.main.temp)}º</h1>
                 <h4>{new Date(card.dt * 1000).getDate().toLocaleString()}/{new Date(card.dt * 1000).getMonth().toLocaleString()} {new Date(card.dt * 1000).getHours().toLocaleString()}:{new Date(card.dt * 1000).getMinutes().toLocaleString()}0</h4>
+              </div>
+
+              <div className='secondary-info'>
+
+                <div className='conditions'>
+                  <p>Conditions: <b>{card.weather[0].main}</b></p>
+                  <p>Wind: <br /><b>{card.wind.speed} m/s</b></p>
+                </div>
+
+                <div className='min-max'>
+                  <p>Min: <b>{card.main.temp_min}º</b></p>
+                  <p>Max: <b>{card.main.temp_max}º</b></p>
+                </div>
 
               </div>
 
-              <div className='conditions'>
-                <p>Conditions: <b>{card.weather[0].main}</b></p>
-                <p>Wind Speed: <b>{card.wind.speed} m/s</b></p>
-              </div>
 
-              <div className='min-max'>
-                <p>Min Temp: <b>{card.main.temp_min}º</b></p>
-                <p>Max Temp: <b>{card.main.temp_max}º</b></p>
-              </div>
+
 
             </article>
           ))}

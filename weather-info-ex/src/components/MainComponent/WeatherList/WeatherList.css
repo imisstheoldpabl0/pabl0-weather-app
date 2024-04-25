@@ -28,6 +28,8 @@
 
         img {
 
+            margin: 24px;
+
             width: 128px;
             height: 128px;
 
@@ -40,6 +42,50 @@
 
     }
 
+    .secondary-info {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+
+        width: 264px;
+        height: 128px;
+
+        border-radius: 32px;
+        background: #dedede;
+        box-shadow: 10px 10px 19px #878787,
+            -10px -10px 19px #ffffff;
+
+        .min-max {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+            margin: 24px;
+
+            p {
+                margin: 4px;
+                background-color: transparent;
+
+            }
+        }
+
+        .conditions {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+            margin: 24px;
+
+            p {
+                margin: 4px;
+                background-color: transparent;
+
+            }
+        }
+    }
+
     .main-info {
         display: flex;
         flex-direction: column;
@@ -48,54 +94,24 @@
         background-color: transparent;
         margin: 24px;
 
-        width: 168px;
+        width: 128px;
         height: 128px;
 
-        border-radius: 30px;
+        border-radius: 32px;
         background: #dedede;
         box-shadow: 10px 10px 19px #878787,
             -10px -10px 19px #ffffff;
 
-        p {
-            margin: 4px;
-            background-color: transparent;
-
-        }
-
         h1 {
             margin: 2px;
             background-color: transparent;
+            width: 128px;
         }
 
         h4 {
             margin: 4px;
             background-color: transparent;
-        }
-    }
-
-    .min-max {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: transparent;
-
-        p {
-            margin: 4px;
-            background-color: transparent;
-
-        }
-    }
-
-    .conditions {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        p {
-            margin: 4px;
-
+            width: 128px;
         }
     }
 }
