@@ -44,9 +44,9 @@ const WeatherList = ({ city }) => {
               </div>
 
               <div className='main-info'>
-                <p>Datetime: <b>{new Date(card.dt * 1000).toLocaleString().slice(2, 4)}</b>/<b>{new Date(card.dt * 1000).toLocaleString().slice(0, 1)}</b><b>{new Date(card.dt * 1000).toLocaleString().slice(10, 15)}</b><b>{new Date(card.dt * 1000).toLocaleString().slice(19, 22)}</b>
-                </p>
-                <p>Temperature: <b>{Math.round(card.main.temp)}º</b></p>
+                <h1>{Math.round(card.main.temp)}º</h1>
+                <h4><b>{new Date(card.dt * 1000).toLocaleString().slice(2, 4)}</b>/<b>{new Date(card.dt * 1000).toLocaleString().slice(0, 1)}</b><b>{new Date(card.dt * 1000).toLocaleString().slice(10, 15)}</b><b>{new Date(card.dt * 1000).toLocaleString().slice(19, 22)}</b></h4>
+
               </div>
 
               <div className='conditions'>

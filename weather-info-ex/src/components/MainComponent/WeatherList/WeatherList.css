@@ -1,19 +1,41 @@
+* {
+    background-color: #dedede;
+
+}
+
 .weatherCard {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    border: 2px solid black;
-    border-radius: 8px;
-    height: 88px;
-    margin: 8px;
+    height: 128px;
+    width: 80%;
+    padding: 48px;
+    margin-bottom: 48px;
+
+    border-radius: 32px;
+    background: #dedede;
+    box-shadow: 10px 10px 19px #878787,
+        -10px -10px 19px #ffffff;
 
     .weatherIcon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 128px;
+        height: 128px;
 
         img {
+
             width: 128px;
             height: 128px;
-        
+
+            border-radius: 32px;
+            background: #dedede;
+            box-shadow: 10px 10px 19px #878787,
+                -10px -10px 19px #ffffff;
+
         }
 
     }
@@ -23,10 +45,31 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        background-color: transparent;
+        margin: 24px;
+
+        width: 168px;
+        height: 128px;
+
+        border-radius: 30px;
+        background: #dedede;
+        box-shadow: 10px 10px 19px #878787,
+            -10px -10px 19px #ffffff;
 
         p {
             margin: 4px;
+            background-color: transparent;
 
+        }
+
+        h1 {
+            margin: 2px;
+            background-color: transparent;
+        }
+
+        h4 {
+            margin: 4px;
+            background-color: transparent;
         }
     }
 
@@ -35,9 +78,11 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        background-color: transparent;
 
         p {
             margin: 4px;
+            background-color: transparent;
 
         }
     }
