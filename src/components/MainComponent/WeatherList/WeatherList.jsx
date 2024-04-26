@@ -11,7 +11,7 @@ const WeatherList = ({ city, myLat, myLong }) => {
     async function fetchData() {
       try {
         // Petición HTTP
-        const res = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?units=metric&lat=${myLat}&lon=${myLon}&appid=3a5cea6cca9761e16b10a370cf420965`);
+        const res = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?units=metric&lat=${myLat}&lon=${myLong}&appid=3a5cea6cca9761e16b10a370cf420965`);
         let weather = res.data.list;
         // console.log(weather);
 

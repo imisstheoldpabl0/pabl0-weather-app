@@ -4,17 +4,18 @@ import WeatherList from "./WeatherList/WeatherList";
 
 function MainComponent() {
   const [city, setCity] = useState('');
-  const [myLat, setMyLat] = useState('40.42166595951138');
-  const [myLong, setMyLong] = useState('-3.6928477443955545');
-  // 40.42166595951138 -3.6928477443955545
+  const [myLat, setMyLat] = useState('40.4165'); //40.4216
+  const [myLong, setMyLong] = useState('-3.7026'); //-3.6928
 
-  function getMyLocation() {
+  // 40.4165, lon: -3.7026
+
+  const getMyLocation = () => {
     navigator.geolocation.getCurrentPosition(position => {
 
       let myLat = position.coords.latitude; // guarda my latitud
       let myLong = position.coords.longitude; // guarda mi longitud
-
-      //console.log(myLat, myLong);
+      
+      console.log(myLat, myLong);
 
     });
   }
@@ -24,7 +25,7 @@ function MainComponent() {
     <main>
       <h1>Este es el Main Component</h1>
       <FormSearch setCity={setCity} />
-      <WeatherList city={[city, myLat, myLong]} />
+      <WeatherList city={city} myLat={myLat} myLong={myLong}/>
       <h2></h2>
     </main>
   );
