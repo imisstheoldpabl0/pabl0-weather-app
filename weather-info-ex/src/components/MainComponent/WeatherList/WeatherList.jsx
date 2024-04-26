@@ -3,11 +3,31 @@ import WeatherCard from "./WeatherCard/WeatherCard";
 import axios from "axios";
 import './WeatherList.css';
 
-const WeatherList = ({ city }) => {
+const WeatherList = ({ city, myLat, myLong }) => {
 
   const [cards, setCards] = useState([]); // Para guardar las tarjetas de clima
 
-  
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        // Petición HTTP
+        const res = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?units=metric&lat=${myLat}&lon=${myLon}&appid=3a5cea6cca9761e16b10a370cf420965`);
+        let weather = res.data.list;
+        // console.log(weather);
+
+        // Guarda en el array de cards el resultado. Procesa los datos
+        setCards(weather
+          .map(l => l));
+
+      } catch (e) {
+        setCards([]); // No pintes nada
+      }
+    }
+
+    fetchData();
+  }, [myLat, myLong]); // cuando hay un cambio en la ciudad se vueve a ejecutar el useEffect
+
+
 
   useEffect(() => {
     async function fetchData() {
@@ -66,4 +86,4 @@ export default WeatherList;
 //https://api.openweathermap.org/data/2.5/forecast?units=metric&q= ${city} &appid=3a5cea6cca9761e16b10a370cf420965
 
 // New API url with: ${lat}, ${lon}, ${apiKey}
-//api.openweathermap.org/data/2.5/forecast?units=metric&lat={lat}&lon={lon}&appid={apiKey}
+//https://api.openweathermap.org/data/2.5/forecast?units=metric&lat={lat}&lon={lon}&appid={apiKey}
