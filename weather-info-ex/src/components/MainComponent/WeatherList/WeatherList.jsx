@@ -7,6 +7,8 @@ const WeatherList = ({ city }) => {
 
   const [cards, setCards] = useState([]); // Para guardar las tarjetas de clima
 
+  
+
   useEffect(() => {
     async function fetchData() {
       try {
@@ -62,3 +64,6 @@ export default WeatherList;
 //https://api.openweathermap.org/data/2.5/forecast?units=metric&q=madrid&appid=3a5cea6cca9761e16b10a370cf420965
 
 //https://api.openweathermap.org/data/2.5/forecast?units=metric&q= ${city} &appid=3a5cea6cca9761e16b10a370cf420965
+
+// New API url with: ${lat}, ${lon}, ${apiKey}
+//api.openweathermap.org/data/2.5/forecast?units=metric&lat={lat}&lon={lon}&appid={apiKey}
