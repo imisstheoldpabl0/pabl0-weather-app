@@ -1,10 +1,11 @@
 import React, { useRef } from 'react';
+import './FormSearch.css';
 
 const FormSearch = ({ setCity }) => {
   const cityInput = useRef(); // Creamos una referencia para el input
 
   const handleClick = () => {
-    setCity(cityInput.current.value); // Pasamos el mensaje al componente hermano a través de la función setCity
+    setCity(cityInput.current.value); // Pasamos el mensaje al componente hermano a través de la función setCity)
   };
 
   return (
